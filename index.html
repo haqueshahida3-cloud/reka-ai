@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reka AI – Free AI Video & Image Generator</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+</head><body>
+<header>
+  <span class="logo">Reka AI</span>
+  <div class="row">
+    <span class="pill hide" id="credits">100 credits</span>
+    <button class="btn ghost" id="themeBtn">🌓</button>
+    <button class="btn ghost" id="menuBtn">☰</button>
+  </div>
+  <div class="menu" id="menu">
+    <button data-go="create">Create</button>
+    <button data-go="history">History</button>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <button id="logout" class="hide">Logout</button>
+  </div>
+</header>
+
+<main>
+  <section id="login" class="center card">
+    <h1>Create AI videos & images – free</h1>
+    <p class="small">No watermark · No subscription · 100 free credits every 4 hours</p>
+    <div id="gbtn" style="display:inline-block;margin-top:10px"></div>
+  </section>
+
+  <section id="create" class="hide">
+    <div class="card">
+      <div class="tabs">
+        <div class="tab on" data-mode="text-video">Text → Video</div>
+        <div class="tab" data-mode="text-image">Text → Image</div>
+        <div class="tab" data-mode="img-video">Image → Video</div>
+      </div>
+      <textarea id="prompt" placeholder="Describe what you want to create..."></textarea>
+      <div class="row" style="flex-wrap:wrap;margin-top:10px">
+        <select id="ratio"><option>16:9</option><option>9:16</option><option>1:1</option><option>4:3</option><option>3:4</option></select>
+        <input type="file" id="file" accept="image/*" class="hide">
+        <button class="btn" id="gen">Generate</button>
+      </div>
+      <p class="small" id="cost">Video costs 20 credits · Image costs 5 credits</p>
+      <p class="small" id="refresh"></p>
+      <p id="status" class="small"></p>
+    </div>
+    <div id="result" class="grid"></div>
+  </section>
+
+  <section id="history" class="hide"><h2>History</h2><div id="hlist" class="grid"></div></section>
+</main>
+<footer>© Reka AI · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></footer>
+<script src="script.js"></script>
+</body></html>
